@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TakeMyPossum — possum removal and general pest control enquiries in Melbourne, Victoria. Request a quote for your home or business.">
+  <meta name="theme-color" content="#10251e">
+  <title>TakeMyPossum | Possum Removal & Pest Control</title>
+  <style>
+    :root {
+      --ink:#14231e; --forest:#173d30; --forest2:#245642; --lime:#c7e36b;
+      --paper:#f5f6f1; --white:#fff; --muted:#66746d; --line:#dce3dc;
+      --shadow:0 18px 55px rgba(15,35,27,.13); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{background:#0c1d17;color:#dce9df;font-size:.86rem}
+    .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 0;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:10;background:rgba(245,246,241,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,35,30,.08)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:900;letter-spacing:-.06em;font-size:1.45rem}
+    .brand-mark{width:42px;height:42px;border-radius:14px;background:var(--forest);display:grid;place-items:center;color:var(--lime);font-size:1.35rem}
+    .brand span:last-child{color:var(--forest2)}
+    .links{display:flex;align-items:center;gap:26px}
+    .links a{text-decoration:none;font-weight:700;font-size:.93rem}
+    .links a:hover{color:var(--forest2)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;background:var(--lime);color:#17251c;text-decoration:none;font-weight:850;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(.97)}
+    .btn.dark{background:var(--forest);color:white}
+    .menu{display:none;background:none;border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:1.2rem}
+    .hero{background:radial-gradient(circle at 78% 25%,rgba(199,227,107,.16),transparent 28%),linear-gradient(120deg,#10251e,#1c4937);color:white;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:36px;padding:78px 0 84px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--lime);font-weight:850;text-transform:uppercase;letter-spacing:.13em;font-size:.75rem}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+    h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.99;letter-spacing:-.065em;margin:20px 0 22px;max-width:730px}
+    h1 em{font-style:normal;color:var(--lime)}
+    .hero p{font-size:1.13rem;color:#d3e1d8;max-width:590px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,.4);color:white}
+    .hero-note{margin-top:25px;color:#b9c9bf;font-size:.86rem}
+    .visual{min-height:390px;position:relative;display:grid;place-items:center}
+    .visual-card{width:min(100%,480px);aspect-ratio:1.04;border-radius:34px;background:linear-gradient(145deg,#315f48,#193d2f);border:1px solid rgba(255,255,255,.14);box-shadow:0 35px 90px rgba(0,0,0,.28);display:grid;place-items:center;position:relative;overflow:hidden}
+    .visual-card:before,.visual-card:after{content:"";position:absolute;border:1px solid rgba(199,227,107,.2);border-radius:50%;width:330px;height:330px}
+    .visual-card:after{width:430px;height:430px}
+    .possum-art{width:84%;max-width:390px;position:relative;z-index:1;filter:drop-shadow(0 24px 18px rgba(0,0,0,.22))}
+    .floating{position:absolute;z-index:2;background:white;color:var(--ink);padding:13px 17px;border-radius:16px;box-shadow:var(--shadow);font-weight:800;font-size:.88rem}
+    .floating.one{top:9%;left:-2%}.floating.two{bottom:9%;right:-2%}
+    .trust{background:white;border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:24px 0;gap:20px}
+    .trust-item{display:flex;align-items:center;justify-content:center;gap:12px;font-weight:800;color:var(--forest);text-align:center}
+    .trust-item b{font-size:1.3rem;color:#739344}
+    section{padding:82px 0}
+    .section-head{max-width:700px;margin-bottom:36px}
+    .kicker{color:#65843e;font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em}
+    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;letter-spacing:-.05em;margin:10px 0 15px}
+    .section-head p{color:var(--muted);font-size:1.05rem;margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 7px 25px rgba(20,35,30,.035)}
+    .service-icon{width:49px;height:49px;border-radius:15px;background:#edf4df;display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+    .service h3{margin:0 0 8px;font-size:1.16rem}
+    .service p{color:var(--muted);font-size:.94rem;margin:0}
+    .service a{display:inline-block;margin-top:16px;color:var(--forest2);font-weight:850;text-decoration:none;font-size:.9rem}
+    .band{background:#e9eee5}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+    .feature-panel{background:var(--forest);color:white;padding:34px;border-radius:var(--radius);position:relative;overflow:hidden}
+    .feature-panel h3{font-size:1.65rem;line-height:1.15;margin:0 0 14px;letter-spacing:-.04em}
+    .feature-panel p{color:#d1dfd5}
+    .checklist{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:13px}
+    .checklist li{display:flex;gap:11px;align-items:flex-start;color:#e5eee8}
+    .checklist li:before{content:"✓";color:var(--lime);font-weight:900}
+    .copy p{color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+    .step{padding:25px;background:white;border:1px solid var(--line);border-radius:var(--radius)}
+    .step:before{counter-increment:step;content:"0" counter(step);display:block;color:#789746;font-weight:950;font-size:1.8rem;margin-bottom:12px}
+    .step h3{margin:0 0 7px}.step p{margin:0;color:var(--muted);font-size:.94rem}
+    .quote{background:linear-gradient(120deg,#10251e,#204c39);color:white}
+    .quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+    .quote .section-head p{color:#c7d6cc}
+    form{background:white;color:var(--ink);border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    label{font-size:.83rem;font-weight:800;display:block;margin-bottom:6px}
+    input,select,textarea{width:100%;border:1px solid #d8e0d9;border-radius:11px;padding:13px 14px;font:inherit;background:#fbfcfa;color:var(--ink)}
+    input:focus,select:focus,textarea:focus{outline:3px solid rgba(199,227,107,.5);border-color:#8da85b}
+    .field.full{grid-column:1/-1}
+    textarea{min-height:110px;resize:vertical}
+    form .btn{grid-column:1/-1;justify-self:start}
+    .fineprint{grid-column:1/-1;color:#6d7972;font-size:.78rem;margin:0}
+    .contact-cards{display:grid;gap:14px;margin-top:26px}
+    .contact-card{border:1px solid rgba(255,255,255,.2);border-radius:15px;padding:15px 17px;color:#e6eee8}
+    .contact-card strong{display:block;color:var(--lime);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
+    footer{background:#0b1b15;color:#c5d2ca;padding:32px 0}
+    .foot{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+    .foot small{color:#8fa197}
+    .foot a{color:var(--lime);text-decoration:none}
+    @media(max-width:850px){.hero-grid,.split,.quote-grid{grid-template-columns:1fr}.hero-grid{padding:58px 0}.visual{min-height:300px}.visual-card{max-width:420px}.services{grid-template-columns:repeat(2,1fr)}.quote-grid{gap:25px}}
+    @media(max-width:620px){.wrap{width:min(100% - 30px,1160px)}.nav{height:68px}.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:18px 22px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:16px}.links.open{display:flex}.links .btn{text-align:center}.menu{display:block}.brand{font-size:1.25rem}.brand-mark{width:38px;height:38px}.hero-grid{gap:12px}.hero h1{font-size:3.2rem}.visual{min-height:270px}.floating.one{left:0}.floating.two{right:0}.trust-grid{grid-template-columns:1fr;padding:18px 0;gap:12px}.trust-item{justify-content:flex-start}.services,.steps{grid-template-columns:1fr}section{padding:62px 0}form{grid-template-columns:1fr;padding:22px}.field.full,.fineprint,form .btn{grid-column:1}.foot{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Possum removal & general pest control enquiries</span><span>Melbourne, Victoria</span></div></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="TakeMyPossum home"><span class="brand-mark">✦</span><span>TakeMy<span>Possum</span></span></a>
+      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="links" id="navLinks" aria-label="Main navigation">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#process">How it works</a><a href="#contact" class="btn">Request a quote ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Melbourne pest solutions</div>
+          <h1>Tough on pests.<br><em>Tougher on</em><br>unwanted guests.</h1>
+          <p>From possum-related roof concerns to everyday pest problems, get in touch with TakeMyPossum to discuss the right next step for your property.</p>
+          <div class="hero-actions"><a class="btn" href="#contact">Get a free quote enquiry ↗</a><a class="btn outline" href="#services">Explore services</a></div>
+          <div class="hero-note">Residential & commercial enquiries · Melbourne, VIC</div>
+        </div>
+        <div class="visual" aria-label="Illustration of a possum">
+          <div class="floating one">🏡 Home & property care</div>
+          <div class="visual-card">
+            <svg class="possum-art" viewBox="0 0 420 340" role="img" aria-label="Friendly stylised possum illustration">
+              <defs><linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9e5d9"/><stop offset="1" stop-color="#aeb8aa"/></linearGradient><linearGradient id="tail" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7d9cb"/><stop offset="1" stop-color="#7c9182"/></linearGradient></defs>
+              <path d="M290 247 C390 278 390 188 343 190 C311 191 350 228 374 209" fill="none" stroke="url(#tail)" stroke-width="24" stroke-linecap="round"/>
+              <ellipse cx="205" cy="210" rx="112" ry="78" fill="url(#fur)"/>
+              <ellipse cx="145" cy="245" rx="36" ry="20" fill="#87988b"/>
+              <path d="M130 148 C103 106 108 63 146 72 C174 78 174 118 160 148" fill="#9aa89b" stroke="#dce1d7" stroke-width="7"/>
+              <path d="M236 143 C244 94 283 74 299 105 C311 129 286 156 263 166" fill="#9aa89b" stroke="#dce1d7" stroke-width="7"/>
+              <ellipse cx="211" cy="158" rx="87" ry="75" fill="url(#fur)"/>
+              <ellipse cx="213" cy="182" rx="56" ry="43" fill="#f2eee4"/>
+              <ellipse cx="177" cy="151" rx="10" ry="13" fill="#263a30"/><ellipse cx="244" cy="151" rx="10" ry="13" fill="#263a30"/>
+              <circle cx="180" cy="147" r="3" fill="white"/><circle cx="247" cy="147" r="3" fill="white"/>
+              <ellipse cx="211" cy="180" rx="13" ry="9" fill="#4a5b50"/>
+              <path d="M211 190 Q196 204 184 194 M211 190 Q226 204 239 194" fill="none" stroke="#718276" stroke-width="4" stroke-linecap="round"/>
+              <path d="M117 204 Q79 191 69 174 M117 217 Q78 216 65 204 M298 204 Q335 189 348 174 M299 217 Q339 215 354 204" fill="none" stroke="#d9dfd4" stroke-width="3" stroke-linecap="round"/>
+              <path d="M155 265 L147 290 M238 267 L246 291" stroke="#aeb8aa" stroke-width="12" stroke-linecap="round"/>
+              <path d="M135 292 l25 0 M235 293 l25 0" stroke="#d4d7ca" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="floating two">🌿 Property protection</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust"><div class="wrap trust-grid">
+      <div class="trust-item"><b>✓</b> Residential enquiries</div>
+      <div class="trust-item"><b>✓</b> Commercial enquiries</div>
+      <div class="trust-item"><b>✓</b> Melbourne, Victoria</div>
+    </div></div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">What we can help with</div><h2>One team for possums and pests.</h2><p>Tell us what you have noticed at your property. We can discuss your situation and the appropriate service or next step.</p></div>
+        <div class="services">
+          <article class="service"><div class="service-icon">🐾</div><h3>Possum enquiries</h3><p>Help with possum activity around roofs, ceiling spaces and other parts of your property.</p><a href="#contact">Enquire about possums →</a></article>
+          <article class="service"><div class="service-icon">🐀</div><h3>Rodent control</h3><p>Enquiries about mice and rats, signs of activity, entry points and prevention.</p><a href="#contact">Ask about rodents →</a></article>
+          <article class="service"><div class="service-icon">🪳</div><h3>Cockroach control</h3><p>Discuss cockroach activity in kitchens, bathrooms, homes and business premises.</p><a href="#contact">Ask about cockroaches →</a></article>
+          <article class="service"><div class="service-icon">🐜</div><h3>Ant control</h3><p>Help identifying ant activity and discussing suitable treatment options.</p><a href="#contact">Ask about ants →</a></article>
+          <article class="service"><div class="service-icon">🕷️</div><h3>Spider control</h3><p>Enquiries about spider activity around indoor and outdoor areas.</p><a href="#contact">Ask about spiders →</a></article>
+          <article class="service"><div class="service-icon">🏢</div><h3>General & commercial pest control</h3><p>Enquire about pest management needs for residential and commercial properties.</p><a href="#contact">Discuss your property →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="about">
+      <div class="wrap split">
+        <div class="copy"><div class="kicker">The TakeMyPossum approach</div><h2>Clear advice. The right solution.</h2><p>Every property and pest issue is different. We start by listening to what is happening, understanding the location and discussing suitable options before any work is arranged.</p><p>Our goal is to make it easier to take the next step towards a safer, more comfortable property.</p><a class="btn dark" href="#contact">Tell us what’s happening ↗</a></div>
+        <div class="feature-panel"><h3>Good service starts with the right questions.</h3><p>When you contact us, it helps to share:</p><ul class="checklist"><li>Your suburb and property type</li><li>Which pest or animal you have noticed</li><li>Where you have seen activity</li><li>Any photos or details that may help explain the issue</li></ul></div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Simple next steps</div><h2>How it works</h2><p>Start with an enquiry. We can then discuss the issue and what is appropriate for your property.</p></div>
+        <div class="steps">
+          <article class="step"><h3>Send an enquiry</h3><p>Tell us what you have noticed, where you are located and how we can contact you.</p></article>
+          <article class="step"><h3>Discuss the issue</h3><p>We’ll need to understand the pest, property and any access or safety considerations.</p></article>
+          <article class="step"><h3>Agree on next steps</h3><p>We can discuss availability, an appropriate service and a quote before work is confirmed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote" id="contact">
+      <div class="wrap quote-grid">
+        <div>
+          <div class="section-head"><div class="kicker">Get in touch</div><h2>What’s happening at your property?</h2><p>Send an enquiry and tell us a little about the issue. We’ll use these details to understand what help you’re looking for.</p></div>
+          <div class="contact-cards">
+            <div class="contact-card"><strong>Service area</strong>Melbourne, Victoria</div>
+            <div class="contact-card"><strong>Email</strong><span>Replace this with your business email before publishing.</span></div>
+            <div class="contact-card"><strong>Phone</strong><span>Add your business phone number before publishing.</span></div>
+          </div>
+        </div>
+        <form id="quoteForm">
+          <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required placeholder="Full name"></div>
+          <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="04xx xxx xxx"></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="suburb">Suburb *</label><input id="suburb" name="suburb" required placeholder="e.g. Box Hill"></div>
+          <div class="field full"><label for="service">What do you need help with? *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Possum enquiry</option><option>Rodent control</option><option>Cockroach control</option><option>Ant control</option><option>Spider control</option><option>General / commercial pest control</option><option>Not sure</option></select></div>
+          <div class="field full"><label for="message">Tell us a little more</label><textarea id="message" name="message" placeholder="Where have you noticed activity? When did it start?"></textarea></div>
+          <p class="fineprint">This demo form opens an email draft on your device. It does not store or send information to a server.</p>
+          <button class="btn dark" type="submit">Prepare my enquiry ↗</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><div><strong style="color:white;font-size:1.15rem">TakeMyPossum</strong><br><small>Tough on Pests. Tougher on Unwanted Guests.</small></div><small>© <span id="year"></span> TakeMyPossum · Melbourne, Victoria</small><small>Possum services are subject to applicable Victorian wildlife laws and authorisations.</small></div></footer>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('quoteForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      const data=new FormData(this);
+      const email='YOUR-BUSINESS-EMAIL@example.com'; // Replace with your real business email before publishing.
+      const subject=encodeURIComponent('Website enquiry - TakeMyPossum');
+      const body=encodeURIComponent(
+        'Name: '+data.get('name')+'\nPhone: '+data.get('phone')+'\nEmail: '+(data.get('email')||'Not provided')+
+        '\nSuburb: '+data.get('suburb')+'\nService: '+data.get('service')+'\n\nDetails:\n'+(data.get('message')||'Not provided')
+      );
+      window.location.href='mailto:'+email+'?subject='+subject+'&body='+body;
+    });
+  </script>
+</body>
+</html>

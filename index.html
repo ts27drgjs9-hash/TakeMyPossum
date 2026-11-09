@@ -190,8 +190,8 @@
           <div class="section-head"><div class="kicker">Get in touch</div><h2>What’s happening at your property?</h2><p>Send an enquiry and tell us a little about the issue. We’ll use these details to understand what help you’re looking for.</p></div>
           <div class="contact-cards">
             <div class="contact-card"><strong>Service area</strong>Melbourne, Victoria</div>
-            <div class="contact-card"><strong>Email</strong><span>Replace this with your business email before publishing.</span></div>
-            <div class="contact-card"><strong>Phone</strong><span>Add your business phone number before publishing.</span></div>
+            <div class="contact-card"><strong>Email</strong><span><a href="mailto:takemypossum@gmail.com">takemypossum@gmail.com</a></span></div>
+            <div class="contact-card"><strong>Phone</strong><span>a href="tel:+61401042325">0401042325</a></span></div>
           </div>
         </div>
         <form id="quoteForm">
@@ -219,7 +219,7 @@
     document.getElementById('quoteForm').addEventListener('submit',function(e){
       e.preventDefault();
       const data=new FormData(this);
-      const email='YOUR-BUSINESS-EMAIL@example.com'; // Replace with your real business email before publishing.
+      const email='takemypossum@gmail.com'; // Replace with your real business email before publishing.
       const subject=encodeURIComponent('Website enquiry - TakeMyPossum');
       const body=encodeURIComponent(
         'Name: '+data.get('name')+'\nPhone: '+data.get('phone')+'\nEmail: '+(data.get('email')||'Not provided')+

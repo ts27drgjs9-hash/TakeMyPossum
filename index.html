@@ -29,7 +29,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
 .btn{display:inline-block;padding:15px 30px;border-radius:999px;font-weight:700;font-size:.97rem;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s,background .2s}
 .btn-gold{background:var(--gold);color:var(--deep);box-shadow:0 8px 24px rgba(193,154,86,.28)}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(193,154,86,.4)}
-.btn-ghost{border:1px solid rgba(230,203,143,.55);color:#f1e3bf}
+.btn-ghost{background:transparent;-webkit-appearance:none;appearance:none;border:1px solid rgba(230,203,143,.55);color:#f1e3bf}
 .btn-ghost:hover{background:rgba(230,203,143,.1)}
 
 /* Header */
@@ -66,6 +66,9 @@ section{padding:112px 0}
 .panel{position:relative;background:linear-gradient(165deg,var(--green-2),var(--deep));color:var(--white);border-radius:24px;padding:52px 46px;box-shadow:0 30px 60px -30px rgba(11,33,27,.55)}
 .panel::before{content:"";position:absolute;inset:10px;border:1px solid rgba(193,154,86,.35);border-radius:16px;pointer-events:none}
 .panel h3{font-size:2.5rem;font-weight:300;margin-bottom:12px}
+.price{display:flex;align-items:baseline;gap:12px;margin:0 0 16px}
+.price b{font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price small{color:var(--sage);font-size:.9rem}
 .panel>p{color:#c4d3cb;margin-bottom:26px;max-width:36ch}
 .panel ul{list-style:none;display:grid;gap:11px;margin-bottom:36px;color:#dfe8e2;font-size:.97rem}
 .panel li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:13px;vertical-align:middle}
@@ -126,6 +129,33 @@ footer{background:var(--deep);color:#8da398;padding:36px 0;font-size:.88rem;bord
 @keyframes sniff{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
 @keyframes whisk{0%,100%{transform:rotate(0)}50%{transform:rotate(2.5deg)}}
 @keyframes rattle{0%,86%,100%{transform:none}88%{transform:translateX(-1.4px)}90%{transform:translateX(1.4px)}92%{transform:translateX(-1px)}94%{transform:translateX(.7px)}96%{transform:none}}
+
+/* Method windows */
+.pbtns{display:flex;flex-wrap:wrap;gap:12px}
+html.lock{overflow:hidden}
+dialog.dlg{border:0;padding:0;margin:auto;width:min(780px,calc(100% - 24px));max-height:calc(100dvh - 32px);border-radius:28px;background:linear-gradient(165deg,#16372e,#0b211b);color:#fff;box-shadow:0 50px 100px -20px rgba(0,0,0,.7);overflow:hidden}
+dialog.dlg::backdrop{background:rgba(5,15,12,.74);backdrop-filter:blur(7px)}
+dialog.dlg::before{content:"";position:absolute;inset:10px;border:1px solid rgba(193,154,86,.35);border-radius:19px;pointer-events:none;z-index:2}
+dialog.dlg[open]{animation:pop .5s cubic-bezier(.2,.7,.2,1)}
+dialog.dlg[open]::backdrop{animation:fade .4s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(28px) scale(.97)}}
+@keyframes fade{from{opacity:0}}
+.dlg-body{position:relative;overflow-y:auto;max-height:calc(100dvh - 32px);padding:56px 48px 44px}
+.dlg-x{position:absolute;top:22px;right:22px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(230,203,143,.5);background:rgba(11,33,27,.7);color:#f1e3bf;font-size:1.5rem;line-height:1;cursor:pointer}
+.dlg-x:hover{background:rgba(230,203,143,.15)}
+.dlg h3{font-size:clamp(2rem,5vw,2.9rem);font-weight:300;margin-bottom:14px;padding-right:46px}
+.dlg-lead{color:#c4d3cb;max-width:56ch;margin-bottom:34px}
+.methods{list-style:none;counter-reset:m;display:grid;gap:0}
+.methods li{counter-increment:m;position:relative;padding:22px 0 22px 64px;border-top:1px solid rgba(193,154,86,.28)}
+.methods li::before{content:counter(m);position:absolute;left:0;top:14px;font-family:var(--serif);font-weight:300;font-size:2.6rem;line-height:1;background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.methods h4{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:4px}
+.methods p{color:#c4d3cb;font-size:.97rem}
+.know{margin-top:12px;padding:22px 24px;border-radius:16px;background:rgba(193,154,86,.1);border:1px solid rgba(193,154,86,.3)}
+.know h4{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:#f1e3bf;margin-bottom:6px}
+.know p{color:#dfe8e2;font-size:.94rem}
+.dlg-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media(max-width:600px){.dlg-body{padding:52px 24px 32px}.methods li{padding-left:52px}}
+@media(prefers-reduced-motion:reduce){dialog.dlg[open],dialog.dlg[open]::backdrop{animation:none}}
 
 /* Scroll effects */
 .progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:50;background:var(--gold);transform:scaleX(0);transform-origin:0 50%}
@@ -206,15 +236,17 @@ html.js .reveal.in{opacity:1;transform:none}
       <div class="panels">
         <div class="panel reveal" style="--d:0s">
           <h3>Possums</h3>
+          <div class="price"><b>$240</b><small>Possum removal</small></div>
           <p>Help with possum activity around your roof, ceiling and property.</p>
           <ul><li>Noises in the roof or ceiling at night</li><li>Possums in ceiling spaces</li><li>Finding how they’re getting in</li></ul>
-          <a class="btn btn-gold" href="#contact" data-service="Possums">Enquire about possums</a>
+          <div class="pbtns"><a class="btn btn-gold" href="#contact" data-service="Possums">Enquire about possums</a><button class="btn btn-ghost" type="button" data-open="possum-dlg">How we do it</button></div>
         </div>
         <div class="panel reveal" style="--d:.15s">
           <h3>Rodents</h3>
+          <div class="price"><b>$280</b><small>Rats and mice</small></div>
           <p>Help with mice and rats in your home or business premises.</p>
           <ul><li>Signs of mouse and rat activity</li><li>Finding entry points</li><li>Prevention to stop them returning</li></ul>
-          <a class="btn btn-gold" href="#contact" data-service="Rodents (mice or rats)">Enquire about rodents</a>
+          <div class="pbtns"><a class="btn btn-gold" href="#contact" data-service="Rodents (mice or rats)">Enquire about rodents</a><button class="btn btn-ghost" type="button" data-open="rodent-dlg">How we do it</button></div>
         </div>
       </div>
     </div>
@@ -241,7 +273,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p class="lead">Call us, or send the form and we’ll get back to you.</p>
         <div class="reach">
           <div><small>Phone</small><a href="tel:+61401042325">0401 042 325</a></div>
-          <div><small>Email</small><a href="mailto:info@takemypossum.com.au">info@takemypossum.com.au</a></div>
+          <div><small>Email</small><a href="mailto:takemypossum@gmail.com">takemypossum@gmail.com</a></div>
           <div><small>Service area</small><span>Melbourne, Victoria</span></div>
         </div>
       </div>
@@ -268,6 +300,41 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </footer>
 
+<dialog class="dlg" id="possum-dlg" aria-labelledby="possum-t">
+  <div class="dlg-body">
+    <button class="dlg-x" type="button" data-close aria-label="Close">&times;</button>
+    <h3 id="possum-t">How we deal with possums</h3>
+    <p class="dlg-lead">Possums are protected wildlife in Victoria, so the aim is to remove them humanely and make sure they can’t get back in.</p>
+    <ol class="methods">
+      <li><h4>Inspect the property</h4><p>We check the roof space and the outside of the house to find where the possum is getting in, where it is nesting and whether there are young.</p></li>
+      <li><h4>Humane cage trapping</h4><p>An injury-free cage trap is set in the roof space or near the entry point, so the possum can be caught without harm.</p></li>
+      <li><h4>Release on your property</h4><p>Under Victorian rules, a trapped possum is released on the same property, within 50 metres of where it was caught, after sunset on the day of capture.</p></li>
+      <li><h4>Install one-way doors</h4><p>One-way doors are fitted at the entry points so the possum can leave on its own but can’t get back in. We check that there are no young inside before fitting them.</p></li>
+      <li><h4>Seal the remaining entry points</h4><p>Once the possum is out, we close off other gaps, damaged roof sections and vents, and look at overhanging branches, so it can’t return.</p></li>
+      <li><h4>Offer an alternative home</h4><p>Where suitable, a possum box can be fitted outside so the possum has somewhere appropriate to live nearby.</p></li>
+    </ol>
+    <div class="know"><h4>Why we don’t relocate possums far away</h4><p>Moving possums off the property where they were caught is prohibited in Victoria. Possums are very territorial, and relocated possums usually die within days in unfamiliar surroundings. Repellents and ultrasonic devices also do little to deter brushtail possums.</p></div>
+    <div class="dlg-cta"><a class="btn btn-gold" href="#contact" data-service="Possums" data-close>Get a possum quote</a><a class="btn btn-ghost" href="tel:+61401042325">Call 0401 042 325</a></div>
+  </div>
+</dialog>
+
+<dialog class="dlg" id="rodent-dlg" aria-labelledby="rodent-t">
+  <div class="dlg-body">
+    <button class="dlg-x" type="button" data-close aria-label="Close">&times;</button>
+    <h3 id="rodent-t">How we deal with rodents</h3>
+    <p class="dlg-lead">Getting rid of mice and rats is only half the job. The other half is stopping them from coming back.</p>
+    <ol class="methods">
+      <li><h4>Inspect and identify</h4><p>We look for droppings, gnaw marks, runways and nesting areas to work out whether you have mice or rats, and how they are getting in. Mice can squeeze through gaps about the width of a pencil.</p></li>
+      <li><h4>Seal the entry points</h4><p>Gaps around pipes, vents, doors and the roofline are closed with rodent-proof materials such as metal mesh, so new rodents can’t get in.</p></li>
+      <li><h4>Trapping</h4><p>Traps are placed along runways and in areas of activity, and checked and cleared so the problem is dealt with quickly.</p></li>
+      <li><h4>Baiting, where suitable</h4><p>Where it is appropriate, bait is used in locked, tamper-resistant stations placed away from children, pets and wildlife.</p></li>
+      <li><h4>Clean-up and prevention</h4><p>We advise on food storage, rubbish and garden clutter that attract rodents, and recommend a follow-up check to make sure they are gone.</p></li>
+    </ol>
+    <div class="know"><h4>Why sealing comes first</h4><p>Rodents can damage insulation and wiring, and they keep coming back if the entry points stay open. Poison baits can also harm pets and wildlife, which is why trapping and sealing are used wherever possible.</p></div>
+    <div class="dlg-cta"><a class="btn btn-gold" href="#contact" data-service="Rodents (mice or rats)" data-close>Get a rodent quote</a><a class="btn btn-ghost" href="tel:+61401042325">Call 0401 042 325</a></div>
+  </div>
+</dialog>
+
 <div class="callbar"><a class="btn btn-gold" href="tel:+61401042325">Call now</a><a class="btn btn-ghost" href="#contact">Get a quote</a></div>
 
 <script>
@@ -293,6 +360,14 @@ if('IntersectionObserver' in window){
 
 document.querySelectorAll('[data-service]').forEach(function(a){
   a.addEventListener('click',function(){document.getElementById('service').value=a.dataset.service;});
+});
+
+document.querySelectorAll('[data-open]').forEach(function(b){
+  b.addEventListener('click',function(){var d=document.getElementById(b.dataset.open);if(d&&d.showModal){d.showModal();document.documentElement.classList.add('lock');}});
+});
+document.querySelectorAll('dialog.dlg').forEach(function(d){
+  d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-close]'))d.close();});
+  d.addEventListener('close',function(){document.documentElement.classList.remove('lock');});
 });
 document.getElementById('quoteForm').addEventListener('submit',function(e){
   e.preventDefault();

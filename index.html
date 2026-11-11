@@ -259,8 +259,40 @@ html.js .reveal.in{opacity:1;transform:none}
 .facts b{color:#8a1c26}
 .hero .btn-ghost{border-color:#8a1c26;color:#8a1c26}
 .hero .btn-ghost:hover{background:rgba(138,28,38,.08)}
+
+/* Phone menu + FAQ */
+.links{gap:26px}
+.menu-btn{display:none;align-items:center;gap:12px;background:transparent;border:1.5px solid rgba(255,210,122,.75);color:#fff;font:inherit;font-weight:700;font-size:1.05rem;padding:11px 20px;border-radius:999px;cursor:pointer}
+.menu-btn:hover{background:rgba(255,210,122,.12)}
+.bars{display:grid;gap:5px;width:22px}
+.bars i{display:block;height:2.5px;border-radius:2px;background:#f1e3bf}
+.mnav{position:fixed;inset:0;z-index:80;display:none;flex-direction:column;background:linear-gradient(165deg,#3a0d12,#8a1c26);color:#fff;overflow-y:auto;padding:0 24px 32px}
+.mnav.open{display:flex;animation:menuin .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes menuin{from{opacity:0;transform:translateY(-14px)}}
+.mtop{display:flex;align-items:center;justify-content:space-between;height:84px;flex:none}
+.mtop>span{font-family:var(--serif);font-size:1.6rem}
+.mclose{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(255,255,255,.8);color:#fff;font:inherit;font-weight:700;font-size:1.05rem;padding:10px 20px;border-radius:999px;cursor:pointer}
+.mclose span:first-child{font-size:1.6rem;line-height:1}
+.mnav ul{list-style:none;margin:6px 0 26px}
+.mnav li a{display:block;padding:19px 0;border-top:1px solid rgba(255,210,122,.3);font-family:var(--serif);font-size:2rem;font-weight:500;color:#fff;text-decoration:none}
+.mnav li:last-child a{border-bottom:1px solid rgba(255,210,122,.3)}
+.mnav .btn{display:block;text-align:center;margin-bottom:14px}
+.mnav .btn-ghost{border-color:rgba(255,255,255,.85);color:#fff}
+.mmail{text-align:center;color:#fdeeee;font-weight:600;text-decoration:none;margin-top:6px}
+.faq{background:var(--ivory)}
+.faq-list{max-width:860px}
+.faq details{border-top:1px solid rgba(138,28,38,.28)}
+.faq details:last-child{border-bottom:1px solid rgba(138,28,38,.28)}
+.faq summary{list-style:none;cursor:pointer;position:relative;padding:22px 56px 22px 0;font-family:var(--serif);font-size:1.55rem;font-weight:500;line-height:1.25;color:#5a1119}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:50%;translate:0 -50%;width:38px;height:38px;border-radius:50%;border:1.5px solid #8a1c26;color:#8a1c26;display:grid;place-items:center;font-family:var(--sans);font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:"\2013";background:#8a1c26;color:#fff}
+.faq details p{padding:0 56px 24px 0;color:var(--muted);font-size:1.1rem}
+@media(max-width:860px){.menu-btn{display:inline-flex}.faq summary{font-size:1.35rem}}
+@media(min-width:861px){.mnav{display:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "TakeMyPossum", "url": "https://takemypossum.com.au", "telephone": "+61401042325", "email": "info@takemypossum.com.au", "description": "Possum and rodent control in Melbourne’s east, north-east and south-east.", "areaServed": ["Hawthorn, Victoria", "Camberwell, Victoria", "Canterbury, Victoria", "Surrey Hills, Victoria", "Balwyn, Victoria", "Box Hill, Victoria", "Blackburn, Victoria", "Burwood, Victoria", "Doncaster, Victoria", "Templestowe, Victoria", "Nunawading, Victoria", "Mitcham, Victoria", "Vermont, Victoria", "Forest Hill, Victoria", "Ringwood, Victoria", "Glen Waverley, Victoria", "Mount Waverley, Victoria", "Croydon, Victoria", "Ivanhoe, Victoria", "Heidelberg, Victoria", "Rosanna, Victoria", "Macleod, Victoria", "Watsonia, Victoria", "Viewbank, Victoria", "Briar Hill, Victoria", "Eltham, Victoria", "Lower Plenty, Victoria", "Montmorency, Victoria", "Greensborough, Victoria", "Diamond Creek, Victoria", "Bundoora, Victoria", "Mill Park, Victoria", "Malvern East, Victoria", "Chadstone, Victoria", "Oakleigh, Victoria", "Clayton, Victoria", "Mulgrave, Victoria", "Wheelers Hill, Victoria", "Springvale, Victoria", "Noble Park, Victoria", "Dandenong, Victoria", "Keysborough, Victoria", "Bentleigh, Victoria", "Moorabbin, Victoria", "Cheltenham, Victoria", "Mentone, Victoria", "Narre Warren, Victoria", "Berwick, Victoria"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will the possum be harmed?", "acceptedAnswer": {"@type": "Answer", "text": "No. Possums are protected wildlife in Victoria. They are caught in an injury-free cage trap and released on your property, within 50 metres of where they were caught, as Victorian rules require."}}, {"@type": "Question", "name": "Why can’t the possum be taken far away?", "acceptedAnswer": {"@type": "Answer", "text": "Moving possums off the property where they were caught is prohibited in Victoria. Possums are very territorial, and relocated possums usually die within days in unfamiliar surroundings."}}, {"@type": "Question", "name": "Will the possum come back?", "acceptedAnswer": {"@type": "Answer", "text": "That’s why we fit one-way doors and seal the entry points. The possum can leave on its own but can’t get back in."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Possum removal is $240 and rat and mouse removal is $280. Call us or send an enquiry and we’ll confirm everything for your property before any work starts."}}, {"@type": "Question", "name": "How do I know if I have possums or rodents?", "acceptedAnswer": {"@type": "Answer", "text": "Possums usually mean thumping or scratching in the roof at night, droppings, and noises in the ceiling. Rodents usually mean small droppings, gnaw marks, scratching in walls and nibbled food."}}, {"@type": "Question", "name": "Which areas do you cover?", "acceptedAnswer": {"@type": "Answer", "text": "We work mainly across Melbourne’s east, north-east and south-east. If your suburb isn’t listed, give us a call and we’ll let you know if we can help."}}, {"@type": "Question", "name": "How do I get a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Call us on 0401 042 325 or send the form on this page. No work starts until you’re happy."}}]}</script>
 </head>
 <body>
 
@@ -271,11 +303,29 @@ html.js .reveal.in{opacity:1;transform:none}
     <nav class="links" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#how">How it works</a>
+      <a href="#areas">Areas</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-ghost" href="tel:+61401042325">0401 042 325</a>
     </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span>Menu</span></button>
   </div>
 </header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mtop"><span>TakeMyPossum</span><button class="mclose" type="button" aria-label="Close menu"><span aria-hidden="true">&times;</span><span>Close</span></button></div>
+  <ul>
+    <li><a href="#services">Services and prices</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#areas">Areas we cover</a></li>
+    <li><a href="#faq">Questions and answers</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn btn-gold" href="tel:+61401042325">Call 0401 042 325</a>
+  <a class="btn btn-ghost" href="#contact">Get a free quote</a>
+  <a class="mmail" href="mailto:info@takemypossum.com.au">info@takemypossum.com.au</a>
+</div>
+
 
 <main id="top">
   <div class="hero">
@@ -352,6 +402,27 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
   </section>
 
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>Questions and answers</h2><p>The things customers ask us most.</p></div>
+      <div class="faq-list">
+        <details><summary>Will the possum be harmed?</summary><p>No. Possums are protected wildlife in Victoria. They are caught in an injury-free cage trap and released on your property, within 50 metres of where they were caught, as Victorian rules require.</p></details>
+        <details><summary>Why can’t the possum be taken far away?</summary><p>Moving possums off the property where they were caught is prohibited in Victoria. Possums are very territorial, and relocated possums usually die within days in unfamiliar surroundings.</p></details>
+        <details><summary>Will the possum come back?</summary><p>That’s why we fit one-way doors and seal the entry points. The possum can leave on its own but can’t get back in.</p></details>
+        <details><summary>How much does it cost?</summary><p>Possum removal is $240 and rat and mouse removal is $280. Call us or send an enquiry and we’ll confirm everything for your property before any work starts.</p></details>
+        <details><summary>How do I know if I have possums or rodents?</summary><p>Possums usually mean thumping or scratching in the roof at night, droppings, and noises in the ceiling. Rodents usually mean small droppings, gnaw marks, scratching in walls and nibbled food.</p></details>
+        <details><summary>Which areas do you cover?</summary><p>We work mainly across Melbourne’s east, north-east and south-east. If your suburb isn’t listed, give us a call and we’ll let you know if we can help.</p></details>
+        <details><summary>How do I get a quote?</summary><p>Call us on 0401 042 325 or send the form on this page. No work starts until you’re happy.</p></details>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS: when you have real customer reviews, copy this block above the FAQ section and fill it in.
+  <section class="areas" id="reviews"><div class="wrap"><div class="head"><h2>What customers say</h2></div>
+  <div class="areas-grid"><div><h3>“Real review text here.”</h3><p>Customer first name, suburb</p></div></div></div></section>
+  -->
+
   <section class="contact" id="contact">
     <div class="wrap contact-grid">
       <div class="reveal">
@@ -425,6 +496,16 @@ html.js .reveal.in{opacity:1;transform:none}
 
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
+(function(){
+  var mb=document.querySelector('.menu-btn'),mn=document.getElementById('mnav'),root=document.documentElement;
+  function open(){mn.classList.add('open');mb.setAttribute('aria-expanded','true');root.classList.add('lock');mn.querySelector('.mclose').focus();}
+  function close(back){mn.classList.remove('open');mb.setAttribute('aria-expanded','false');root.classList.remove('lock');if(back)mb.focus();}
+  mb.addEventListener('click',open);
+  mn.querySelector('.mclose').addEventListener('click',function(){close(true);});
+  mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){close(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mn.classList.contains('open'))close(true);});
+})();
+
 (function(){
   var root=document.documentElement;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
